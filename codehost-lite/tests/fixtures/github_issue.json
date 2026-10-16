@@ -1,0 +1,7 @@
+{
+  "number": 29,
+  "title": "[house-keeping]  Refactor & Clean-up for PDD testing",
+  "body": "## Description\n\nAs a developer, I want to update this project with better design, so we can test it on the PDD auto-gen test.\n\n## What should include\n\n- Add unit test.\n- Simplify the complex JOOQ deploy workflow.\n- Add test data for integration test and init JOOQ.\n\n## What shouldn't include\n\n- Fix any code that not related to the deployment process.",
+  "state": "closed",
+  "html_url": "https://github.com/ntut-Tu/cloth_shop_server/issues/29"
+}

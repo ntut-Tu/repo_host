@@ -1,0 +1,16 @@
+{
+  "number": 31,
+  "title": "feat(server): Add price range filtering to product listings",
+  "body": "**PR description**  \nAdd optional `minPrice` and `maxPrice` parameters to `GET /api/products/v2`. A product matches when at least one of its variants is priced within the inclusive range. The filter applies to both the returned products and the pagination total. Invalid ranges return HTTP 400.\n",
+  "state": "open",
+  "merged": false,
+  "html_url": "https://github.com/ntut-Tu/cloth_shop_server/pull/31",
+  "head": {
+    "sha": "7871190aa7c02ca999fd0c1382bf8019359cb509",
+    "ref": "range-filtering"
+  },
+  "base": {
+    "sha": "dff33b95920be90cdbd4ac555653366b6dcc6610",
+    "ref": "main"
+  }
+}
