@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Codehost API</title>
+<style>body{font:16px system-ui;max-width:1000px;margin:3rem auto;padding:0 1rem}summary{cursor:pointer;padding:1rem;background:#eef2f6}details{margin:1rem 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:1rem}code{font-size:1rem}a{color:#2458ad}</style>
+<h1>Codehost API</h1><p>One configured repository. Source reads use an exact commit SHA. Resource operations require a Bearer token.</p>
+<p><a href="/openapi.json">Download OpenAPI 3.1 contract</a>. Expand a route to inspect parameters, request bodies and responses. Reusable schemas appear below.</p>
+<main id="routes">Loading contract…</main><h2>Schemas</h2><div id="schemas"></div>
+<script>
+function detail(parent,title,value){const row=document.createElement('details');const heading=document.createElement('summary');heading.textContent=title;const body=document.createElement('pre');body.textContent=JSON.stringify(value,null,2);row.append(heading,body);parent.append(row)}
+fetch('/openapi.json').then(r=>r.json()).then(spec=>{const root=document.getElementById('routes');root.textContent='';for(const [path,methods] of Object.entries(spec.paths))for(const [method,operation] of Object.entries(methods))detail(root,method.toUpperCase()+' '+path+' — '+operation.summary,operation);for(const [name,schema] of Object.entries(spec.components.schemas))detail(document.getElementById('schemas'),name,schema)}).catch(()=>{document.getElementById('routes').textContent='Unable to load contract.'});
+</script></html>

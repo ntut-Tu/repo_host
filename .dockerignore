@@ -1,0 +1,6 @@
+*
+!codehost-go/
+!codehost-go/**
+codehost-go/**/.git/
+codehost-go/**/.state/
+codehost-go/**/values.yaml

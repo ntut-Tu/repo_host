@@ -1,0 +1,16 @@
+# Copy to values.yaml on the server. Keep values.yaml private and out of backups
+# that are not approved for credentials.
+codehost_go:
+  provider: "github" # github or gitlab
+  repository: "owner/repo" # GitLab: group/project or project ID
+  upstream_token: "" # GitHub GraphQL and private repositories need a token
+  api_url: null # self-hosted providers: HTTPS API URL
+  git_url: null # credential-free HTTPS; set when the API URL cannot imply it
+  api_token: "" # generate a random 32+ character incoming Bearer token
+  data_directory: "/data"
+  retrieval:
+    file_bytes: 1048576
+    batch_files: 32
+    batch_bytes: 4194304
+    search_files: 1000
+    search_bytes: 16777216

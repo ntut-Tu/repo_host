@@ -1,0 +1,7 @@
+/values.yaml
+/dist/
+/.idea/
+/.state/
+__pycache__/
+*.egg-info/
+.venv/

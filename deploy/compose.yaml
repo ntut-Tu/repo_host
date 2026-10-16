@@ -1,0 +1,29 @@
+name: tools-codehost
+services:
+  codehost-go:
+    build:
+      context: ..
+      dockerfile: codehost-go/Dockerfile
+      args:
+        CODEHOST_UID: ${CODEHOST_UID:-1000}
+        CODEHOST_GID: ${CODEHOST_GID:-1000}
+    image: tools-codehost-go:local
+    init: true
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    ports:
+      - "${CODEHOST_BIND_IP:-127.0.0.1}:${CODEHOST_PORT:-8082}:8082"
+    volumes:
+      - ../values.yaml:/app/values.yaml:ro
+      - codehost-data:/data
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8082/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    stop_grace_period: 20s
+volumes:
+  codehost-data:
